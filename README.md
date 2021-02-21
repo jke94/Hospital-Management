@@ -6,7 +6,16 @@ Using [Entity Framework Core Tools](https://docs.microsoft.com/en-us/ef/core/cli
 
 The goald of this project it´s build a database to apply the [Entity Framework Core Data Seeding](https://docs.microsoft.com/es-es/ef/core/modeling/data-seeding). A powerfull technology to have a snapchots of the model of the database and inyect data in the database with an easy way
 - 😃 See in 'DataSeeding' the classes used to generate randomly data and 'HospitalDataContext.cs' file to see how with the overried 'OnModelCreating' function you can inject the data.
+```
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Doctor>().HasData(DoctorDataSeeded.GenerateRandomDoctors());
 
+        modelBuilder.Entity<Patient>().HasData(PatientDataSeeded.GenerateRandomPatients());
+
+        modelBuilder.Entity<MedicalTreatment>().HasData(MedicalTreatmentDataSeeded.GenerateMedicalTreatment());
+    }
+```
 ## Description
 
 This project is composed by two projects:
