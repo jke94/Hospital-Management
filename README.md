@@ -28,7 +28,7 @@ This project is composed by two projects:
 ### Dependencies or tool necesaries
 
 * Visual Studio Community 2019
-* .NET Core 3.1
+* .NET 5.0
 * Sql Server Express Localdb
 
 ### Installing
